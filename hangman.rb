@@ -17,7 +17,7 @@ class Hangman
 
       if string.include?("_")
         puts string
-        puts "Secret word length: #{string.length}"
+        puts "Secret word length: #{@code_length}"
 
         guess = guesser.make_guess
         puts "#{guesser.name}'s guess: #{guess}."
@@ -98,8 +98,6 @@ class ComputerPlayer
     end
 
     max = mode_hash.values.max
-
-    p mode_hash
 
     mode_hash.each do |letter, appearances|
       if appearances == max
